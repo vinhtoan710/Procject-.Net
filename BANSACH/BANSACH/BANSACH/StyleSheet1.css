@@ -1,0 +1,16 @@
+﻿body {
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+
+}
+#outer{
+    width:1000px;
+    height:500px;
+    margin:0px auto;
+}
+#header {
+    width: 1000px;
+    height: 500px;
+    margin: 0px auto;
+}

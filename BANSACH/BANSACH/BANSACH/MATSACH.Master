@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MATSACH.master.cs" Inherits="BANSACH.MATSACH" %>
+
+<%@ Register Src="~/DangNhap.ascx" TagPrefix="uc1" TagName="DangNhap" %>
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="BanSach.css" rel="stylesheet" runat="server"/>
+    <link href="MatHangChiTiet.css" rel="stylesheet" runat="server"/>
+    <link href="MatHang.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+            <div id="outer">
+                <div id="header">
+                    <h2>Books are powerful</h2>                    
+                </div>
+                <div id="menu">
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="#">Trang chủ</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="#">Giới thiệu</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="#">Sách</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="#">Hỗ trợ</asp:HyperLink>
+                    
+                    <input type="text" placeholder="Tìm kiếm"/>
+                </div>
+                
+
+                <div id="content">
+                    <div id="left" style="float:left">
+                        <h3 style="text-align:center">Thể loại</h3>
+                        <br />
+                        
+                        <asp:DataList class="DataListLeft" ID="DataList1" runat="server" DataKeyField="MALOAI" >
+                            <ItemTemplate>
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton class="LinkButtonne" ID="LinkButton1" runat="server"  CommandArgument='<%#Eval("MALOAI") %>' Text='<%#Eval("TENLOAI") %>' OnClick="LinkButton1_Click"></asp:LinkButton>
+                                    </li>
+                                </ul>
+                                
+                                
+                            </ItemTemplate>
+
+                        </asp:DataList>
+                        
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [MALOAI], [TENLOAI] FROM [LOAISACH]"></asp:SqlDataSource>
+                        
+                    </div>
+                    <div id="right" style="float:right">
+                        <asp:Label ID="Label1" runat="server" Text="ĐĂNG NHẬP Ở ĐÂY"></asp:Label>
+                        <uc1:DangNhap runat="server" id="DangNhap" />
+                        
+                    </div>
+                    <div id="mid">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        <div id="footer">
+            <h3>Copyright &copy NHÓM FAN ANH ĐÔNG</h3>
+        </div>
+        
+    </form>
+</body>
+</html>

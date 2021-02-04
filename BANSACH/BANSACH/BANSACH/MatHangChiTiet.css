@@ -1,0 +1,70 @@
+﻿body {
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+}
+
+#tong {
+    width: 560px;
+}
+
+#mid-left {
+    width:30%;
+    float:left;
+}
+
+#mid-left a{
+    border: 0;
+    background: #2c3e50;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 12px 10px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    text-decoration: none;
+}
+
+#mid-right {
+    width:40%;
+    float:right;
+    
+}
+
+#mid-right input[type="submit"] {
+    border: 0;
+    background: #2c3e50;
+    display: block;
+    margin: 10px auto;
+    text-align: left;
+    border: 2px solid #2ecc71;
+    padding: 12px 10px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+
+#mid-right input[type="submit"]:hover {
+    background: #2ecc71;
+}
+
+#mid-right input[type="text"] {
+    border: 0;
+    background: none;
+    text-align: left;
+    border: 2px solid #2ecc71;
+    padding: 12px 10px;
+    width: 120px;
+    outline: none;
+    border-radius: 24px;
+}
+
+
+
+
+
